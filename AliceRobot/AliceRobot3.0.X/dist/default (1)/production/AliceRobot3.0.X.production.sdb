@@ -1,0 +1,1200 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4620 ]
+[d frameptr 4065 ]
+"88 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\lcd.c
+[e E2756 . `uc
+LCD_SHIFT_LEFT 0
+LCD_SHIFT_RIGHT 1
+]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\__fpclassifyf.c
+[v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\atoi.c
+[v _atoi atoi `(i  1 e 2 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"72 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _pad pad `(i  1 s 2 pad ]
+"259
+[v _ctoa ctoa `(i  1 s 2 ctoa ]
+"319
+[v _efgtoa efgtoa `(i  1 s 2 efgtoa ]
+"546
+[v _stoa stoa `(i  1 s 2 stoa ]
+"670
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+"1368
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\floorf.c
+[v _floorf floorf `(f  1 e 4 0 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\isdigit.c
+[v _isdigit isdigit `(i  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\isspace.c
+[v _isspace isspace `(i  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\isupper.c
+[v _isupper isupper `(i  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"9 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+[v i2___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+[v i2___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+"12 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strncmp.c
+[v _strncmp strncmp `(i  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\tolower.c
+[v _tolower tolower `(i  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"11 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\driving.c
+[v _drive drive `(v  1 e 1 0 ]
+"64
+[v _set_pwm_duty_cycle_RC2_RightSlave set_pwm_duty_cycle_RC2_RightSlave `(v  1 e 1 0 ]
+"82
+[v _set_pwm_duty_cycle_RC1_LeftMaster set_pwm_duty_cycle_RC1_LeftMaster `(v  1 e 1 0 ]
+"17 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\I2C.c
+[v _I2C_Master_Wait I2C_Master_Wait `T(v  1 s 1 I2C_Master_Wait ]
+"28
+[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+"51
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+"61
+[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
+"66
+[v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
+"73
+[v _I2C_Master_Read I2C_Master_Read `(uc  1 e 1 0 ]
+"26 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\lcd.c
+[v _pulse_e pulse_e `T(v  1 s 1 pulse_e ]
+"42
+[v _send_nibble send_nibble `(v  1 s 1 send_nibble ]
+"53
+[v _send_byte send_byte `(v  1 s 1 send_byte ]
+"62
+[v _lcdInst lcdInst `(v  1 e 1 0 ]
+"67
+[v _initLCD initLCD `(v  1 e 1 0 ]
+"100
+[v _putch putch `(v  1 e 1 0 ]
+"106
+[v _LCD_set_cursor LCD_set_cursor `(v  1 e 1 0 ]
+"123
+[v _LCD_write_str LCD_write_str `(v  1 e 1 0 ]
+"49 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"275
+[v _high_isr high_isr `IIH(v  1 e 1 0 ]
+"350
+[v _portSetup portSetup `(v  1 e 1 0 ]
+"411
+[v _PWMSetup PWMSetup `(v  1 e 1 0 ]
+"13 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\motors.c
+[v _DCMotorCenterLeft DCMotorCenterLeft `(v  1 e 1 0 ]
+"18
+[v _DCMotorCenterRight DCMotorCenterRight `(v  1 e 1 0 ]
+"23
+[v _DCMotorLeftFwd DCMotorLeftFwd `(v  1 e 1 0 ]
+"29
+[v _DCMotorRightFwd DCMotorRightFwd `(v  1 e 1 0 ]
+"35
+[v _DCMotorLeftBkwd DCMotorLeftBkwd `(v  1 e 1 0 ]
+"41
+[v _DCMotorRightBkwd DCMotorRightBkwd `(v  1 e 1 0 ]
+"47
+[v _DCMotorAllOff DCMotorAllOff `(v  1 e 1 0 ]
+"59
+[v _DCMotorLeftRightFwdON DCMotorLeftRightFwdON `(v  1 e 1 0 ]
+"63
+[v _DCMotorLeftRightBkwdON DCMotorLeftRightBkwdON `(v  1 e 1 0 ]
+"15 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\uart.c
+[v _UART_Init UART_Init `(v  1 e 1 0 ]
+"58
+[v _UART_send_char UART_send_char `(v  1 e 1 0 ]
+"65
+[v _UART_send_string UART_send_string `(v  1 e 1 0 ]
+"86
+[v _UART_available UART_available `(i  1 e 2 0 ]
+"90
+[v _UART_read UART_read `(uc  1 e 1 0 ]
+"42 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X/uart.h
+[v __rx_buffer _rx_buffer `VE[64]uc  1 e 64 0 ]
+"43
+[v __tx_buffer _tx_buffer `VE[64]uc  1 e 64 0 ]
+"44
+[v __rx_buffer_head _rx_buffer_head `VEuc  1 e 1 0 ]
+"45
+[v __rx_buffer_tail _rx_buffer_tail `VEuc  1 e 1 0 ]
+"46
+[v __tx_buffer_head _tx_buffer_head `VEuc  1 e 1 0 ]
+"47
+[v __tx_buffer_tail _tx_buffer_tail `VEuc  1 e 1 0 ]
+"189 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+[s S381 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"572
+[s S390 . 1 `uc 1 PSP0 1 0 :1:0 
+`uc 1 PSP1 1 0 :1:1 
+`uc 1 PSP2 1 0 :1:2 
+`uc 1 PSP3 1 0 :1:3 
+`uc 1 PSP4 1 0 :1:4 
+`uc 1 PSP5 1 0 :1:5 
+`uc 1 PSP6 1 0 :1:6 
+`uc 1 PSP7 1 0 :1:7 
+]
+[s S399 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 P1B 1 0 :1:5 
+`uc 1 P1C 1 0 :1:6 
+`uc 1 P1D 1 0 :1:7 
+]
+[s S404 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 SS2 1 0 :1:7 
+]
+[u S407 . 1 `S381 1 . 1 0 `S390 1 . 1 0 `S399 1 . 1 0 `S404 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES407  1 e 1 @3971 ]
+"880
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+[s S554 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"907
+[s S563 . 1 `uc 1 LA0 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+`uc 1 LA2 1 0 :1:2 
+`uc 1 LA3 1 0 :1:3 
+`uc 1 LA4 1 0 :1:4 
+`uc 1 LA5 1 0 :1:5 
+`uc 1 LA6 1 0 :1:6 
+`uc 1 LA7 1 0 :1:7 
+]
+[u S572 . 1 `S554 1 . 1 0 `S563 1 . 1 0 ]
+[v _LATAbits LATAbits `VES572  1 e 1 @3977 ]
+"992
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"1104
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"1216
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+[s S199 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"1243
+[s S208 . 1 `uc 1 LD0 1 0 :1:0 
+`uc 1 LD1 1 0 :1:1 
+`uc 1 LD2 1 0 :1:2 
+`uc 1 LD3 1 0 :1:3 
+`uc 1 LD4 1 0 :1:4 
+`uc 1 LD5 1 0 :1:5 
+`uc 1 LD6 1 0 :1:6 
+`uc 1 LD7 1 0 :1:7 
+]
+[u S217 . 1 `S199 1 . 1 0 `S208 1 . 1 0 ]
+[v _LATDbits LATDbits `VES217  1 e 1 @3980 ]
+"1328
+[v _LATE LATE `VEuc  1 e 1 @3981 ]
+"1380
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"1602
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"1824
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+[s S52 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1856
+[s S61 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S70 . 1 `S52 1 . 1 0 `S61 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES70  1 e 1 @3988 ]
+"2046
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+[s S885 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 PSPIE 1 0 :1:7 
+]
+"2519
+[s S894 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+]
+[u S898 . 1 `S885 1 . 1 0 `S894 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES898  1 e 1 @3997 ]
+[s S831 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3061
+[s S840 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S843 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[s S846 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S849 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S852 . 1 `uc 1 RCD8 1 0 :1:0 
+]
+[u S854 . 1 `S831 1 . 1 0 `S840 1 . 1 0 `S843 1 . 1 0 `S846 1 . 1 0 `S849 1 . 1 0 `S852 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES854  1 e 1 @4011 ]
+[s S777 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"3269
+[s S786 . 1 `uc 1 TX9D1 1 0 :1:0 
+`uc 1 TRMT1 1 0 :1:1 
+`uc 1 BRGH1 1 0 :1:2 
+`uc 1 SENDB1 1 0 :1:3 
+`uc 1 SYNC1 1 0 :1:4 
+`uc 1 TXEN1 1 0 :1:5 
+`uc 1 TX91 1 0 :1:6 
+`uc 1 CSRC1 1 0 :1:7 
+]
+[s S795 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[s S798 . 1 `uc 1 TXD8 1 0 :1:0 
+]
+[u S800 . 1 `S777 1 . 1 0 `S786 1 . 1 0 `S795 1 . 1 0 `S798 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES800  1 e 1 @4012 ]
+"3486
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"3498
+[v _RCREG RCREG `VEuc  1 e 1 @4014 ]
+"3510
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+[s S489 . 1 `uc 1 CM 1 0 :3:0 
+`uc 1 CIS 1 0 :1:3 
+`uc 1 C1INV 1 0 :1:4 
+`uc 1 C2INV 1 0 :1:5 
+`uc 1 C1OUT 1 0 :1:6 
+`uc 1 C2OUT 1 0 :1:7 
+]
+"3687
+[s S496 . 1 `uc 1 CM0 1 0 :1:0 
+`uc 1 CM1 1 0 :1:1 
+`uc 1 CM2 1 0 :1:2 
+]
+[s S500 . 1 `uc 1 CMEN0 1 0 :1:0 
+`uc 1 CMEN1 1 0 :1:1 
+`uc 1 CMEN2 1 0 :1:2 
+]
+[u S504 . 1 `S489 1 . 1 0 `S496 1 . 1 0 `S500 1 . 1 0 ]
+[v _CMCONbits CMCONbits `VES504  1 e 1 @4020 ]
+"3752
+[v _CVRCON CVRCON `VEuc  1 e 1 @4021 ]
+"4241
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @4027 ]
+"4359
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @4030 ]
+"4373
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
+[s S460 . 1 `uc 1 ADCS 1 0 :3:0 
+`uc 1 ACQT 1 0 :3:3 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"4394
+[s S465 . 1 `uc 1 ADCS0 1 0 :1:0 
+`uc 1 ADCS1 1 0 :1:1 
+`uc 1 ADCS2 1 0 :1:2 
+`uc 1 ACQT0 1 0 :1:3 
+`uc 1 ACQT1 1 0 :1:4 
+`uc 1 ACQT2 1 0 :1:5 
+]
+[u S472 . 1 `S460 1 . 1 0 `S465 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES472  1 e 1 @4032 ]
+"4444
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"4529
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
+"4669
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @4037 ]
+[s S94 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"4686
+[u S103 . 1 `S94 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES103  1 e 1 @4037 ]
+"4731
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
+[s S26 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"4751
+[s S32 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S37 . 1 `S26 1 . 1 0 `S32 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES37  1 e 1 @4038 ]
+"4801
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
+"5022
+[v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
+"5029
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
+"5107
+[v _PR2 PR2 `VEuc  1 e 1 @4043 ]
+[s S150 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"6406
+[s S159 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S168 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S172 . 1 `S150 1 . 1 0 `S159 1 . 1 0 `S168 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES172  1 e 1 @4082 ]
+"6864
+[v _CCP1M0 CCP1M0 `VEb  1 e 0 @32232 ]
+"6867
+[v _CCP1M1 CCP1M1 `VEb  1 e 0 @32233 ]
+"6870
+[v _CCP1M2 CCP1M2 `VEb  1 e 0 @32234 ]
+"6873
+[v _CCP1M3 CCP1M3 `VEb  1 e 0 @32235 ]
+"6876
+[v _CCP1X CCP1X `VEb  1 e 0 @32237 ]
+"6879
+[v _CCP1Y CCP1Y `VEb  1 e 0 @32236 ]
+"6891
+[v _CCP2M0 CCP2M0 `VEb  1 e 0 @32208 ]
+"6894
+[v _CCP2M1 CCP2M1 `VEb  1 e 0 @32209 ]
+"6897
+[v _CCP2M2 CCP2M2 `VEb  1 e 0 @32210 ]
+"6900
+[v _CCP2M3 CCP2M3 `VEb  1 e 0 @32211 ]
+"6903
+[v _CCP2X CCP2X `VEb  1 e 0 @32213 ]
+"6906
+[v _CCP2Y CCP2Y `VEb  1 e 0 @32212 ]
+"7155
+[v _INT0IE INT0IE `VEb  1 e 0 @32660 ]
+"7158
+[v _INT0IF INT0IF `VEb  1 e 0 @32657 ]
+"7170
+[v _INT1IE INT1IE `VEb  1 e 0 @32643 ]
+"7173
+[v _INT1IF INT1IF `VEb  1 e 0 @32640 ]
+"7191
+[v _INT2IE INT2IE `VEb  1 e 0 @32644 ]
+"7194
+[v _INT2IF INT2IF `VEb  1 e 0 @32641 ]
+"7203
+[v _INTEDG0 INTEDG0 `VEb  1 e 0 @32654 ]
+"7206
+[v _INTEDG1 INTEDG1 `VEb  1 e 0 @32653 ]
+"7590
+[v _P1M0 P1M0 `VEb  1 e 0 @32238 ]
+"7593
+[v _P1M1 P1M1 `VEb  1 e 0 @32239 ]
+"7836
+[v _RCIE RCIE `VEb  1 e 0 @31981 ]
+"7839
+[v _RCIF RCIF `VEb  1 e 0 @31989 ]
+"8133
+[v _T2CKPS0 T2CKPS0 `VEb  1 e 0 @32336 ]
+"8136
+[v _T2CKPS1 T2CKPS1 `VEb  1 e 0 @32337 ]
+"8205
+[v _TMR2ON TMR2ON `VEb  1 e 0 @32338 ]
+"8391
+[v _TXIE TXIE `VEb  1 e 0 @31980 ]
+"8394
+[v _TXIF TXIF `VEb  1 e 0 @31988 ]
+"55 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _flags flags `i  1 s 2 flags ]
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"66
+[v _dbuf dbuf `[80]uc  1 s 80 dbuf ]
+"69
+[v _nout nout `i  1 s 2 nout ]
+"18 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\main.c
+[v _key_was_pressed key_was_pressed `VEa  1 e 1 0 ]
+"21
+[v _tickL tickL `VEd  1 e 4 0 ]
+"22
+[v _tickR tickR `VEd  1 e 4 0 ]
+"23
+[v _tickLeftTemp tickLeftTemp `VEl  1 e 4 0 ]
+"24
+[v _tickRightTemp tickRightTemp `VEl  1 e 4 0 ]
+"26
+[v _distanceL distanceL `VEd  1 e 4 0 ]
+"27
+[v _distanceR distanceR `VEd  1 e 4 0 ]
+"28
+[v _masterPower masterPower `VEf  1 e 4 0 ]
+"29
+[v _slavePower slavePower `VEf  1 e 4 0 ]
+"31
+[v _travelDirection travelDirection `VEi  1 e 2 0 ]
+"35
+[v _moving moving `a  1 e 1 0 ]
+"44
+[v _keys keys `C[17]uc  1 e 17 0 ]
+"49
+[v _main main `(v  1 e 1 0 ]
+{
+"252
+[v main@keypress keypress `uc  1 a 1 111 ]
+"67
+[v main@command command `[25]uc  1 a 25 60 ]
+"69
+[v main@uart_char_to_send uart_char_to_send `[25]uc  1 a 25 25 ]
+"68
+[v main@lcdDisplay lcdDisplay `[16]uc  1 a 16 85 ]
+"70
+[v main@buffer buffer `[10]uc  1 a 10 50 ]
+"73
+[v main@k k `o  1 a 8 103 ]
+"71
+[v main@index index `i  1 a 2 113 ]
+"65
+[v main@commandReceived commandReceived `a  1 a 1 112 ]
+"258
+} 0
+"9 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[s S1704 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+"13
+[v sprintf@f f `S1704  1 a 6 14 ]
+"12
+[v sprintf@ap ap `[1]*.39v  1 a 2 12 ]
+"9
+[v sprintf@s s `*.39uc  1 p 2 0 ]
+[v sprintf@fmt fmt `*.25Cuc  1 p 2 2 ]
+"23
+} 0
+"1368 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+"1371
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 115 ]
+[s S1041 _IO_FILE 0 ]
+"1368
+[v vfprintf@fp fp `*.39S1041  1 p 2 109 ]
+[v vfprintf@fmt fmt `*.25Cuc  1 p 2 111 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 113 ]
+"1382
+} 0
+"670
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+{
+"676
+[v vfpfcnvrt@f f `d  1 a 4 101 ]
+"672
+[v vfpfcnvrt@ct ct `[3]uc  1 a 3 105 ]
+"673
+[v vfpfcnvrt@done done `i  1 a 2 93 ]
+"672
+[v vfpfcnvrt@cp cp `*.39uc  1 a 2 91 ]
+[v vfpfcnvrt@c c `uc  1 a 1 108 ]
+[s S1041 _IO_FILE 0 ]
+"670
+[v vfpfcnvrt@fp fp `*.39S1041  1 p 2 81 ]
+[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 83 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 85 ]
+"1365
+} 0
+"3 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strncmp.c
+[v _strncmp strncmp `(i  1 e 2 0 ]
+{
+"5
+[v strncmp@r r `*.25Cuc  1 a 2 35 ]
+[v strncmp@l l `*.39Cuc  1 a 2 33 ]
+"3
+[v strncmp@_l _l `*.39Cuc  1 p 2 26 ]
+[v strncmp@_r _r `*.25Cuc  1 p 2 28 ]
+[v strncmp@n n `ui  1 p 2 30 ]
+"9
+} 0
+"546 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _stoa stoa `(i  1 s 2 stoa ]
+{
+"548
+[v stoa@nuls nuls `[7]uc  1 a 7 44 ]
+"549
+[v stoa@l l `i  1 a 2 59 ]
+[v stoa@p p `i  1 a 2 57 ]
+"548
+[v stoa@cp cp `*.39uc  1 a 2 55 ]
+"549
+[v stoa@w w `i  1 a 2 53 ]
+[v stoa@i i `i  1 a 2 51 ]
+[s S1041 _IO_FILE 0 ]
+"546
+[v stoa@fp fp `*.39S1041  1 p 2 39 ]
+[v stoa@s s `*.39uc  1 p 2 41 ]
+"548
+[v stoa@F1158 F1158 `[7]uc  1 s 7 F1158 ]
+"589
+} 0
+"319
+[v _efgtoa efgtoa `(i  1 s 2 efgtoa ]
+{
+"323
+[v efgtoa@u u `d  1 a 4 77 ]
+[v efgtoa@g g `d  1 a 4 69 ]
+[v efgtoa@l l `d  1 a 4 63 ]
+[v efgtoa@h h `d  1 a 4 59 ]
+[v efgtoa@ou ou `d  1 a 4 25 ]
+"322
+[v efgtoa@n n `i  1 a 2 75 ]
+[v efgtoa@e e `i  1 a 2 73 ]
+[v efgtoa@i i `i  1 a 2 67 ]
+[v efgtoa@w w `i  1 a 2 56 ]
+[v efgtoa@p p `i  1 a 2 53 ]
+[v efgtoa@sign sign `i  1 a 2 51 ]
+[v efgtoa@d d `i  1 a 2 49 ]
+[v efgtoa@ne ne `i  1 a 2 47 ]
+[v efgtoa@m m `i  1 a 2 45 ]
+[v efgtoa@pp pp `i  1 a 2 43 ]
+[v efgtoa@t t `i  1 a 2 41 ]
+"321
+[v efgtoa@mode mode `uc  1 a 1 58 ]
+[v efgtoa@nmode nmode `uc  1 a 1 55 ]
+[s S1041 _IO_FILE 0 ]
+"319
+[v efgtoa@fp fp `*.39S1041  1 p 2 13 ]
+[v efgtoa@f f `d  1 p 4 15 ]
+[v efgtoa@c c `uc  1 p 1 19 ]
+"503
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\tolower.c
+[v _tolower tolower `(i  1 e 2 0 ]
+{
+[v tolower@c c `i  1 p 2 32 ]
+"8
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\isupper.c
+[v _isupper isupper `(i  1 e 2 0 ]
+{
+[v isupper@c c `i  1 p 2 26 ]
+"8
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+{
+"14
+[v strcpy@d d `*.39uc  1 a 2 34 ]
+"13
+[v strcpy@s s `*.35Cuc  1 a 2 32 ]
+"7
+[v strcpy@dest dest `*.39uc  1 p 2 26 ]
+[v strcpy@src src `*.35Cuc  1 p 2 28 ]
+"18
+} 0
+"3 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\floorf.c
+[v _floorf floorf `(f  1 e 4 0 ]
+{
+[u S1638 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"5
+[v floorf@u u `S1638  1 a 4 67 ]
+"7
+[v floorf@m m `ul  1 a 4 61 ]
+"6
+[v floorf@e e `i  1 a 2 65 ]
+"3
+[v floorf@x x `f  1 p 4 51 ]
+"4
+[v floorf@F524 F524 `S1638  1 s 4 F524 ]
+"27
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\__fpclassifyf.c
+[v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
+{
+[u S1638 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"6
+[v ___fpclassifyf@u u `S1638  1 a 4 36 ]
+"7
+[v ___fpclassifyf@e e `i  1 a 2 34 ]
+"4
+[v ___fpclassifyf@x x `f  1 p 4 26 ]
+"5
+[v ___fpclassifyf@F463 F463 `S1638  1 s 4 F463 ]
+"11
+} 0
+"245 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@b b `d  1 p 4 67 ]
+[v ___flsub@a a `d  1 p 4 71 ]
+"250
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+{
+[v ___flneg@f1 f1 `d  1 p 4 26 ]
+"20
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+{
+[v ___fleq@ff1 ff1 `d  1 p 4 26 ]
+[v ___fleq@ff2 ff2 `d  1 p 4 30 ]
+"12
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 31 ]
+[v ___awmod@counter counter `uc  1 a 1 30 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 26 ]
+[v ___awmod@divisor divisor `i  1 p 2 28 ]
+"34
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 32 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 31 ]
+[v ___awdiv@counter counter `uc  1 a 1 30 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 26 ]
+[v ___awdiv@divisor divisor `i  1 p 2 28 ]
+"41
+} 0
+"259 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _ctoa ctoa `(i  1 s 2 ctoa ]
+{
+"261
+[v ctoa@w w `i  1 a 2 60 ]
+[s S1041 _IO_FILE 0 ]
+"259
+[v ctoa@fp fp `*.39S1041  1 p 2 57 ]
+[v ctoa@c c `uc  1 p 1 59 ]
+"270
+} 0
+"72
+[v _pad pad `(i  1 s 2 pad ]
+{
+"74
+[v pad@w w `i  1 a 2 55 ]
+[v pad@i i `i  1 a 2 53 ]
+[s S1041 _IO_FILE 0 ]
+"72
+[v pad@fp fp `*.39S1041  1 p 2 46 ]
+[v pad@buf buf `*.39uc  1 p 2 48 ]
+[v pad@p p `i  1 p 2 50 ]
+"95
+} 0
+"12 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"14
+[v strlen@a a `*.39Cuc  1 a 2 28 ]
+"12
+[v strlen@s s `*.39Cuc  1 p 2 26 ]
+"26
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+"11
+[v fputs@i i `i  1 a 2 44 ]
+"10
+[v fputs@c c `uc  1 a 1 43 ]
+"8
+[v fputs@s s `*.39Cuc  1 p 2 39 ]
+[s S1704 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.39S1704  1 p 2 41 ]
+"19
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 30 ]
+[s S1704 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.39S1704  1 p 2 32 ]
+"21
+} 0
+"100 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\lcd.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@data data `uc  1 a 1 wreg ]
+[v putch@data data `uc  1 a 1 wreg ]
+[v putch@data data `uc  1 a 1 29 ]
+"103
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\atoi.c
+[v _atoi atoi `(i  1 e 2 0 ]
+{
+"6
+[v atoi@n n `i  1 a 2 46 ]
+[v atoi@neg neg `i  1 a 2 39 ]
+"4
+[v atoi@s s `*.25Cuc  1 p 2 33 ]
+"16
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\isspace.c
+[v _isspace isspace `(i  1 e 2 0 ]
+{
+[v isspace@c c `i  1 p 2 26 ]
+"8
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\isdigit.c
+[v _isdigit isdigit `(i  1 e 2 0 ]
+{
+[v isdigit@c c `i  1 p 2 26 ]
+"8
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 30 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 26 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 28 ]
+"53
+} 0
+"350 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\main.c
+[v _portSetup portSetup `(v  1 e 1 0 ]
+{
+"409
+} 0
+"67 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\lcd.c
+[v _initLCD initLCD `(v  1 e 1 0 ]
+{
+"86
+} 0
+"11 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\driving.c
+[v _drive drive `(v  1 e 1 0 ]
+{
+"12
+[v drive@error error `f  1 a 4 27 ]
+"62
+} 0
+"64
+[v _set_pwm_duty_cycle_RC2_RightSlave set_pwm_duty_cycle_RC2_RightSlave `(v  1 e 1 0 ]
+{
+"71
+[v set_pwm_duty_cycle_RC2_RightSlave@duty_val duty_val `us  1 a 2 25 ]
+"70
+[v set_pwm_duty_cycle_RC2_RightSlave@max_duty_val max_duty_val `us  1 a 2 23 ]
+"64
+[v set_pwm_duty_cycle_RC2_RightSlave@duty duty `f  1 p 4 13 ]
+"80
+} 0
+"82
+[v _set_pwm_duty_cycle_RC1_LeftMaster set_pwm_duty_cycle_RC1_LeftMaster `(v  1 e 1 0 ]
+{
+"89
+[v set_pwm_duty_cycle_RC1_LeftMaster@duty_val duty_val `us  1 a 2 25 ]
+"88
+[v set_pwm_duty_cycle_RC1_LeftMaster@max_duty_val max_duty_val `us  1 a 2 23 ]
+"82
+[v set_pwm_duty_cycle_RC1_LeftMaster@duty duty `f  1 p 4 13 ]
+"98
+} 0
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 36 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 35 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 26 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 34 ]
+"44
+} 0
+"43 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 72 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 71 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 63 ]
+"70
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S1503 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S1508 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1511 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1503 1 fAsBytes 4 0 `S1508 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1511  1 a 4 7 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 2 ]
+[s S1579 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S1582 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1579 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1582  1 a 2 11 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 6 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 1 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 0 ]
+"8
+[v ___flmul@b b `d  1 p 4 51 ]
+[v ___flmul@a a `d  1 p 4 55 ]
+"205
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 63 ]
+[v ___flge@ff2 ff2 `d  1 p 4 67 ]
+"19
+} 0
+"11 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 45 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 38 ]
+"20
+[v ___fldiv@new_exp new_exp `s  1 a 2 43 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 50 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 49 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 42 ]
+"11
+[v ___fldiv@b b `d  1 p 4 26 ]
+[v ___fldiv@a a `d  1 p 4 30 ]
+"185
+} 0
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 66 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 65 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 64 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 63 ]
+"10
+[v ___fladd@b b `d  1 p 4 51 ]
+[v ___fladd@a a `d  1 p 4 55 ]
+"237
+} 0
+"65 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\uart.c
+[v _UART_send_string UART_send_string `(v  1 e 1 0 ]
+{
+"67
+[v UART_send_string@i i `i  1 a 2 31 ]
+"65
+[v UART_send_string@message message `*.35uc  1 p 2 27 ]
+"84
+} 0
+"58
+[v _UART_send_char UART_send_char `(v  1 e 1 0 ]
+{
+[v UART_send_char@c c `Cuc  1 a 1 wreg ]
+[v UART_send_char@c c `Cuc  1 a 1 wreg ]
+[v UART_send_char@c c `Cuc  1 a 1 26 ]
+"63
+} 0
+"90
+[v _UART_read UART_read `(uc  1 e 1 0 ]
+{
+"94
+[v UART_read@c c `uc  1 a 1 26 ]
+"98
+} 0
+"86
+[v _UART_available UART_available `(i  1 e 2 0 ]
+{
+"88
+} 0
+"15
+[v _UART_Init UART_Init `(v  1 e 1 0 ]
+{
+"20
+[v UART_Init@baudRate baudRate `l  1 a 4 44 ]
+"51
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 36 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 35 ]
+[v ___aldiv@counter counter `uc  1 a 1 34 ]
+"7
+[v ___aldiv@dividend dividend `l  1 p 4 26 ]
+[v ___aldiv@divisor divisor `l  1 p 4 30 ]
+"41
+} 0
+"411 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\main.c
+[v _PWMSetup PWMSetup `(v  1 e 1 0 ]
+{
+"447
+} 0
+"123 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\lcd.c
+[v _LCD_write_str LCD_write_str `(v  1 e 1 0 ]
+{
+"124
+[v LCD_write_str@i i `i  1 a 2 32 ]
+"123
+[v LCD_write_str@str str `*.39uc  1 p 2 29 ]
+"131
+} 0
+"106
+[v _LCD_set_cursor LCD_set_cursor `(v  1 e 1 0 ]
+{
+[v LCD_set_cursor@row row `ui  1 p 2 30 ]
+[v LCD_set_cursor@column column `ui  1 p 2 32 ]
+"121
+} 0
+"62
+[v _lcdInst lcdInst `(v  1 e 1 0 ]
+{
+[v lcdInst@data data `uc  1 a 1 wreg ]
+[v lcdInst@data data `uc  1 a 1 wreg ]
+[v lcdInst@data data `uc  1 a 1 29 ]
+"65
+} 0
+"53
+[v _send_byte send_byte `(v  1 s 1 send_byte ]
+{
+[v send_byte@data data `uc  1 a 1 wreg ]
+[v send_byte@data data `uc  1 a 1 wreg ]
+"55
+[v send_byte@data data `uc  1 a 1 28 ]
+"59
+} 0
+"42
+[v _send_nibble send_nibble `(v  1 s 1 send_nibble ]
+{
+[v send_nibble@data data `uc  1 a 1 wreg ]
+[v send_nibble@data data `uc  1 a 1 wreg ]
+"44
+[v send_nibble@data data `uc  1 a 1 27 ]
+"47
+} 0
+"26
+[v _pulse_e pulse_e `T(v  1 s 1 pulse_e ]
+{
+"27
+[v pulse_e@interruptState interruptState `uc  1 a 1 26 ]
+"36
+} 0
+"28 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\I2C.c
+[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+{
+[v I2C_Master_Init@clockFreq clockFreq `Cul  1 p 4 39 ]
+"49
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 34 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 38 ]
+"7
+[v ___lldiv@dividend dividend `ul  1 p 4 26 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 30 ]
+"30
+} 0
+"59 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\motors.c
+[v _DCMotorLeftRightFwdON DCMotorLeftRightFwdON `(v  1 e 1 0 ]
+{
+"62
+} 0
+"29
+[v _DCMotorRightFwd DCMotorRightFwd `(v  1 e 1 0 ]
+{
+"34
+} 0
+"23
+[v _DCMotorLeftFwd DCMotorLeftFwd `(v  1 e 1 0 ]
+{
+"28
+} 0
+"63
+[v _DCMotorLeftRightBkwdON DCMotorLeftRightBkwdON `(v  1 e 1 0 ]
+{
+"66
+} 0
+"41
+[v _DCMotorRightBkwd DCMotorRightBkwd `(v  1 e 1 0 ]
+{
+"46
+} 0
+"35
+[v _DCMotorLeftBkwd DCMotorLeftBkwd `(v  1 e 1 0 ]
+{
+"40
+} 0
+"18
+[v _DCMotorCenterRight DCMotorCenterRight `(v  1 e 1 0 ]
+{
+"21
+} 0
+"13
+[v _DCMotorCenterLeft DCMotorCenterLeft `(v  1 e 1 0 ]
+{
+"16
+} 0
+"47
+[v _DCMotorAllOff DCMotorAllOff `(v  1 e 1 0 ]
+{
+"56
+} 0
+"275 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot3.0.X\main.c
+[v _high_isr high_isr `IIH(v  1 e 1 0 ]
+{
+"323
+} 0
+"245 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+[v i2___flsub __flsub `(d  1 e 4 0 ]
+{
+[v i2___flsub@b b `d  1 p 4 16 ]
+[v i2___flsub@a a `d  1 p 4 20 ]
+"250
+} 0
+"10
+[v i2___fladd __fladd `(d  1 e 4 0 ]
+{
+[v i2___fladd@grs __fladd `uc  1 a 1 15 ]
+[v i2___fladd@bexp __fladd `uc  1 a 1 14 ]
+[v i2___fladd@aexp __fladd `uc  1 a 1 13 ]
+[v i2___fladd@signs __fladd `uc  1 a 1 12 ]
+[v i2___fladd@b b `d  1 p 4 0 ]
+[v i2___fladd@a a `d  1 p 4 4 ]
+"237
+} 0

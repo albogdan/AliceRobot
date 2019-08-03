@@ -4702,8 +4702,8 @@ void UART_Init(void){
     PIE1bits.RCIE = 1;
     PIE1bits.TXIE = 1;
 
-    IPR1bits.TXIP = 0;
-    IPR1bits.RCIP = 0;
+
+
 
 }
 

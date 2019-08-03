@@ -28,6 +28,8 @@ LCD_SHIFT_RIGHT 1
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\ftadd.c
@@ -50,8 +52,10 @@ LCD_SHIFT_RIGHT 1
 [v _sprintf sprintf `(i  1 e 2 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+[v i2___fladd __fladd `(d  1 e 4 0 ]
 "245
 [v ___flsub __flsub `(d  1 e 4 0 ]
+[v i2___flsub __flsub `(d  1 e 4 0 ]
 "11 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
@@ -92,33 +96,35 @@ LCD_SHIFT_RIGHT 1
 [v _LCD_set_cursor LCD_set_cursor `(v  1 e 1 0 ]
 "123
 [v _LCD_write_str LCD_write_str `(v  1 e 1 0 ]
-"147 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\main.c
+"49 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"334
+"298
 [v _high_isr high_isr `IIH(v  1 e 1 0 ]
-"365
-[v _low_isr low_isr `IIL(v  1 e 1 0 ]
-"389
+"369
 [v _portSetup portSetup `(v  1 e 1 0 ]
-"465
+"445
 [v _reverse reverse `(v  1 e 1 0 ]
 "4 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\motors.c
+[v _DCMotorLeftOFF DCMotorLeftOFF `(v  1 e 1 0 ]
+"8
+[v _DCMotorRightOFF DCMotorRightOFF `(v  1 e 1 0 ]
+"13
 [v _DCMotorCenterLeft DCMotorCenterLeft `(v  1 e 1 0 ]
-"9
+"18
 [v _DCMotorCenterRight DCMotorCenterRight `(v  1 e 1 0 ]
-"14
+"23
 [v _DCMotorLeftFwd DCMotorLeftFwd `(v  1 e 1 0 ]
-"20
+"29
 [v _DCMotorRightFwd DCMotorRightFwd `(v  1 e 1 0 ]
-"26
+"35
 [v _DCMotorLeftBkwd DCMotorLeftBkwd `(v  1 e 1 0 ]
-"32
+"41
 [v _DCMotorRightBkwd DCMotorRightBkwd `(v  1 e 1 0 ]
-"38
+"47
 [v _DCMotorAllOff DCMotorAllOff `(v  1 e 1 0 ]
-"50
+"59
 [v _DCMotorLeftRightFwdON DCMotorLeftRightFwdON `(v  1 e 1 0 ]
-"54
+"63
 [v _DCMotorLeftRightBkwdON DCMotorLeftRightBkwdON `(v  1 e 1 0 ]
 "31 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\rtc.c
 [v _RTC_Init RTC_Init `(v  1 e 1 0 ]
@@ -146,7 +152,7 @@ LCD_SHIFT_RIGHT 1
 [v __tx_buffer_tail _tx_buffer_tail `VEuc  1 e 1 0 ]
 "189 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f4620.h
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
-[s S379 . 1 `uc 1 RD0 1 0 :1:0 
+[s S414 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -156,7 +162,7 @@ LCD_SHIFT_RIGHT 1
 `uc 1 RD7 1 0 :1:7 
 ]
 "572
-[s S388 . 1 `uc 1 PSP0 1 0 :1:0 
+[s S423 . 1 `uc 1 PSP0 1 0 :1:0 
 `uc 1 PSP1 1 0 :1:1 
 `uc 1 PSP2 1 0 :1:2 
 `uc 1 PSP3 1 0 :1:3 
@@ -165,19 +171,19 @@ LCD_SHIFT_RIGHT 1
 `uc 1 PSP6 1 0 :1:6 
 `uc 1 PSP7 1 0 :1:7 
 ]
-[s S397 . 1 `uc 1 . 1 0 :5:0 
+[s S432 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 P1B 1 0 :1:5 
 `uc 1 P1C 1 0 :1:6 
 `uc 1 P1D 1 0 :1:7 
 ]
-[s S402 . 1 `uc 1 . 1 0 :7:0 
+[s S437 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S405 . 1 `S379 1 . 1 0 `S388 1 . 1 0 `S397 1 . 1 0 `S402 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES405  1 e 1 @3971 ]
+[u S440 . 1 `S414 1 . 1 0 `S423 1 . 1 0 `S432 1 . 1 0 `S437 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES440  1 e 1 @3971 ]
 "880
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
-[s S995 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S892 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -187,7 +193,7 @@ LCD_SHIFT_RIGHT 1
 `uc 1 LATA7 1 0 :1:7 
 ]
 "907
-[s S1004 . 1 `uc 1 LA0 1 0 :1:0 
+[s S901 . 1 `uc 1 LA0 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 `uc 1 LA2 1 0 :1:2 
 `uc 1 LA3 1 0 :1:3 
@@ -196,8 +202,8 @@ LCD_SHIFT_RIGHT 1
 `uc 1 LA6 1 0 :1:6 
 `uc 1 LA7 1 0 :1:7 
 ]
-[u S1013 . 1 `S995 1 . 1 0 `S1004 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1013  1 e 1 @3977 ]
+[u S910 . 1 `S892 1 . 1 0 `S901 1 . 1 0 ]
+[v _LATAbits LATAbits `VES910  1 e 1 @3977 ]
 "992
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
 "1104
@@ -256,7 +262,7 @@ LCD_SHIFT_RIGHT 1
 [v _TRISCbits TRISCbits `VES70  1 e 1 @3988 ]
 "2046
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S885 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S820 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -266,29 +272,13 @@ LCD_SHIFT_RIGHT 1
 `uc 1 PSPIE 1 0 :1:7 
 ]
 "2519
-[s S894 . 1 `uc 1 . 1 0 :4:0 
+[s S829 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IE 1 0 :1:4 
 `uc 1 RC1IE 1 0 :1:5 
 ]
-[u S898 . 1 `S885 1 . 1 0 `S894 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES898  1 e 1 @3997 ]
-[s S915 . 1 `uc 1 TMR1IP 1 0 :1:0 
-`uc 1 TMR2IP 1 0 :1:1 
-`uc 1 CCP1IP 1 0 :1:2 
-`uc 1 SSPIP 1 0 :1:3 
-`uc 1 TXIP 1 0 :1:4 
-`uc 1 RCIP 1 0 :1:5 
-`uc 1 ADIP 1 0 :1:6 
-`uc 1 PSPIP 1 0 :1:7 
-]
-"2673
-[s S924 . 1 `uc 1 . 1 0 :4:0 
-`uc 1 TX1IP 1 0 :1:4 
-`uc 1 RC1IP 1 0 :1:5 
-]
-[u S928 . 1 `S915 1 . 1 0 `S924 1 . 1 0 ]
-[v _IPR1bits IPR1bits `VES928  1 e 1 @3999 ]
-[s S831 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S833 . 1 `S820 1 . 1 0 `S829 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES833  1 e 1 @3997 ]
+[s S766 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -298,23 +288,23 @@ LCD_SHIFT_RIGHT 1
 `uc 1 SPEN 1 0 :1:7 
 ]
 "3061
-[s S840 . 1 `uc 1 . 1 0 :3:0 
+[s S775 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 ADEN 1 0 :1:3 
 ]
-[s S843 . 1 `uc 1 . 1 0 :5:0 
+[s S778 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[s S846 . 1 `uc 1 . 1 0 :6:0 
+[s S781 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S849 . 1 `uc 1 . 1 0 :6:0 
+[s S784 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S852 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S787 . 1 `uc 1 RCD8 1 0 :1:0 
 ]
-[u S854 . 1 `S831 1 . 1 0 `S840 1 . 1 0 `S843 1 . 1 0 `S846 1 . 1 0 `S849 1 . 1 0 `S852 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES854  1 e 1 @4011 ]
-[s S777 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S789 . 1 `S766 1 . 1 0 `S775 1 . 1 0 `S778 1 . 1 0 `S781 1 . 1 0 `S784 1 . 1 0 `S787 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES789  1 e 1 @4011 ]
+[s S712 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -324,7 +314,7 @@ LCD_SHIFT_RIGHT 1
 `uc 1 CSRC 1 0 :1:7 
 ]
 "3269
-[s S786 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S721 . 1 `uc 1 TX9D1 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 `uc 1 BRGH1 1 0 :1:2 
 `uc 1 SENDB1 1 0 :1:3 
@@ -333,20 +323,20 @@ LCD_SHIFT_RIGHT 1
 `uc 1 TX91 1 0 :1:6 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S795 . 1 `uc 1 . 1 0 :6:0 
+[s S730 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S798 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S733 . 1 `uc 1 TXD8 1 0 :1:0 
 ]
-[u S800 . 1 `S777 1 . 1 0 `S786 1 . 1 0 `S795 1 . 1 0 `S798 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES800  1 e 1 @4012 ]
+[u S735 . 1 `S712 1 . 1 0 `S721 1 . 1 0 `S730 1 . 1 0 `S733 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES735  1 e 1 @4012 ]
 "3486
 [v _TXREG TXREG `VEuc  1 e 1 @4013 ]
 "3498
 [v _RCREG RCREG `VEuc  1 e 1 @4014 ]
 "3510
 [v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
-[s S514 . 1 `uc 1 CM 1 0 :3:0 
+[s S522 . 1 `uc 1 CM 1 0 :3:0 
 `uc 1 CIS 1 0 :1:3 
 `uc 1 C1INV 1 0 :1:4 
 `uc 1 C2INV 1 0 :1:5 
@@ -354,35 +344,35 @@ LCD_SHIFT_RIGHT 1
 `uc 1 C2OUT 1 0 :1:7 
 ]
 "3687
-[s S521 . 1 `uc 1 CM0 1 0 :1:0 
+[s S529 . 1 `uc 1 CM0 1 0 :1:0 
 `uc 1 CM1 1 0 :1:1 
 `uc 1 CM2 1 0 :1:2 
 ]
-[s S525 . 1 `uc 1 CMEN0 1 0 :1:0 
+[s S533 . 1 `uc 1 CMEN0 1 0 :1:0 
 `uc 1 CMEN1 1 0 :1:1 
 `uc 1 CMEN2 1 0 :1:2 
 ]
-[u S529 . 1 `S514 1 . 1 0 `S521 1 . 1 0 `S525 1 . 1 0 ]
-[v _CMCONbits CMCONbits `VES529  1 e 1 @4020 ]
+[u S537 . 1 `S522 1 . 1 0 `S529 1 . 1 0 `S533 1 . 1 0 ]
+[v _CMCONbits CMCONbits `VES537  1 e 1 @4020 ]
 "3752
 [v _CVRCON CVRCON `VEuc  1 e 1 @4021 ]
 "4373
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
-[s S485 . 1 `uc 1 ADCS 1 0 :3:0 
+[s S493 . 1 `uc 1 ADCS 1 0 :3:0 
 `uc 1 ACQT 1 0 :3:3 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "4394
-[s S490 . 1 `uc 1 ADCS0 1 0 :1:0 
+[s S498 . 1 `uc 1 ADCS0 1 0 :1:0 
 `uc 1 ADCS1 1 0 :1:1 
 `uc 1 ADCS2 1 0 :1:2 
 `uc 1 ACQT0 1 0 :1:3 
 `uc 1 ACQT1 1 0 :1:4 
 `uc 1 ACQT2 1 0 :1:5 
 ]
-[u S497 . 1 `S485 1 . 1 0 `S490 1 . 1 0 ]
-[v _ADCON2bits ADCON2bits `VES497  1 e 1 @4032 ]
+[u S505 . 1 `S493 1 . 1 0 `S498 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES505  1 e 1 @4032 ]
 "4444
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "4529
@@ -423,38 +413,6 @@ LCD_SHIFT_RIGHT 1
 [v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
 "5029
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
-[s S552 . 1 `uc 1 NOT_BOR 1 0 :1:0 
-]
-"5391
-[s S554 . 1 `uc 1 . 1 0 :1:0 
-`uc 1 NOT_POR 1 0 :1:1 
-]
-[s S557 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 NOT_PD 1 0 :1:2 
-]
-[s S560 . 1 `uc 1 . 1 0 :3:0 
-`uc 1 NOT_TO 1 0 :1:3 
-]
-[s S563 . 1 `uc 1 . 1 0 :4:0 
-`uc 1 NOT_RI 1 0 :1:4 
-]
-[s S566 . 1 `uc 1 nBOR 1 0 :1:0 
-`uc 1 nPOR 1 0 :1:1 
-`uc 1 nPD 1 0 :1:2 
-`uc 1 nTO 1 0 :1:3 
-`uc 1 nRI 1 0 :1:4 
-`uc 1 . 1 0 :1:5 
-`uc 1 SBOREN 1 0 :1:6 
-`uc 1 IPEN 1 0 :1:7 
-]
-[s S575 . 1 `uc 1 BOR 1 0 :1:0 
-`uc 1 POR 1 0 :1:1 
-`uc 1 PD 1 0 :1:2 
-`uc 1 TO 1 0 :1:3 
-`uc 1 RI 1 0 :1:4 
-]
-[u S581 . 1 `S552 1 . 1 0 `S554 1 . 1 0 `S557 1 . 1 0 `S560 1 . 1 0 `S563 1 . 1 0 `S566 1 . 1 0 `S575 1 . 1 0 ]
-[v _RCONbits RCONbits `VES581  1 e 1 @4048 ]
 [s S150 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
@@ -512,88 +470,98 @@ LCD_SHIFT_RIGHT 1
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"132 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\main.c
+"28 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\main.c
 [v _key_was_pressed key_was_pressed `VEa  1 e 1 0 ]
-"133
+"29
 [v _keys keys `C[17]uc  1 e 17 0 ]
-"136
+"32
+[v _tickL tickL `VEd  1 e 4 0 ]
+"33
+[v _tickR tickR `VEd  1 e 4 0 ]
+"35
 [v _distanceL distanceL `VEd  1 e 4 0 ]
-"137
+"36
 [v _distanceR distanceR `VEd  1 e 4 0 ]
-"144
-[v _direction direction `VEa  1 e 1 0 ]
-"147
+"38
+[v _travelDirection travelDirection `VEi  1 e 2 0 ]
+"39
+[v _sideTurnedOff sideTurnedOff `i  1 e 2 0 ]
+"49
 [v _main main `(v  1 e 1 0 ]
 {
-"312
-[v main@keypress keypress `uc  1 a 1 68 ]
-"165
-[v main@command command `[25]uc  1 a 25 25 ]
-"167
-[v main@uart_char_to_send uart_char_to_send `[25]uc  1 a 25 0 ]
-"166
-[v main@lcdDisplay lcdDisplay `[16]uc  1 a 16 50 ]
-"169
-[v main@index index `i  1 a 2 70 ]
-"163
-[v main@commandReceived commandReceived `a  1 a 1 69 ]
-"318
+"275
+[v main@keypress keypress `uc  1 a 1 97 ]
+"67
+[v main@command command `[25]uc  1 a 25 54 ]
+"69
+[v main@uart_char_to_send uart_char_to_send `[25]uc  1 a 25 29 ]
+"68
+[v main@lcdDisplay lcdDisplay `[16]uc  1 a 16 79 ]
+"71
+[v main@index index `i  1 a 2 100 ]
+"73
+[v main@correctingDirection correctingDirection `a  1 a 1 102 ]
+"74
+[v main@moving moving `a  1 a 1 99 ]
+"65
+[v main@commandReceived commandReceived `a  1 a 1 98 ]
+"281
 } 0
 "9 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[s S1601 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[s S1500 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
 "13
-[v sprintf@f f `S1601  1 a 6 33 ]
+[v sprintf@f f `S1500  1 a 6 18 ]
 "12
-[v sprintf@ap ap `[1]*.39v  1 a 2 31 ]
+[v sprintf@ap ap `[1]*.39v  1 a 2 16 ]
 "9
-[v sprintf@s s `*.39uc  1 p 2 21 ]
-[v sprintf@fmt fmt `*.25Cuc  1 p 2 23 ]
+[v sprintf@s s `*.39uc  1 p 2 6 ]
+[v sprintf@fmt fmt `*.25Cuc  1 p 2 8 ]
 "23
 } 0
 "1368 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
 "1371
-[v vfprintf@cfmt cfmt `*.25uc  1 a 2 19 ]
-[s S1052 _IO_FILE 0 ]
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 79 ]
+[s S951 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.39S1052  1 p 2 13 ]
-[v vfprintf@fmt fmt `*.25Cuc  1 p 2 15 ]
-[v vfprintf@ap ap `*.39*.39v  1 p 2 17 ]
+[v vfprintf@fp fp `*.39S951  1 p 2 0 ]
+[v vfprintf@fmt fmt `*.25Cuc  1 p 2 2 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 4 ]
 "1382
 } 0
 "670
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
 "672
-[v vfpfcnvrt@cp cp `*.39uc  1 a 2 6 ]
-[v vfpfcnvrt@c c `uc  1 a 1 8 ]
-[s S1052 _IO_FILE 0 ]
+[v vfpfcnvrt@cp cp `*.39uc  1 a 2 72 ]
+[v vfpfcnvrt@c c `uc  1 a 1 78 ]
+[s S951 _IO_FILE 0 ]
 "670
-[v vfpfcnvrt@fp fp `*.39S1052  1 p 2 0 ]
-[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 2 ]
-[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 4 ]
+[v vfpfcnvrt@fp fp `*.39S951  1 p 2 62 ]
+[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 64 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 66 ]
 "1365
 } 0
 "546
 [v _stoa stoa `(i  1 s 2 stoa ]
 {
 "548
-[v stoa@nuls nuls `[7]uc  1 a 7 47 ]
+[v stoa@nuls nuls `[7]uc  1 a 7 44 ]
 "549
-[v stoa@l l `i  1 a 2 62 ]
-[v stoa@p p `i  1 a 2 60 ]
+[v stoa@l l `i  1 a 2 59 ]
+[v stoa@p p `i  1 a 2 57 ]
 "548
-[v stoa@cp cp `*.39uc  1 a 2 58 ]
+[v stoa@cp cp `*.39uc  1 a 2 55 ]
 "549
-[v stoa@w w `i  1 a 2 56 ]
-[v stoa@i i `i  1 a 2 54 ]
-[s S1052 _IO_FILE 0 ]
+[v stoa@w w `i  1 a 2 53 ]
+[v stoa@i i `i  1 a 2 51 ]
+[s S951 _IO_FILE 0 ]
 "546
-[v stoa@fp fp `*.39S1052  1 p 2 42 ]
-[v stoa@s s `*.39uc  1 p 2 44 ]
+[v stoa@fp fp `*.39S951  1 p 2 39 ]
+[v stoa@s s `*.39uc  1 p 2 41 ]
 "548
 [v stoa@F1136 F1136 `[7]uc  1 s 7 F1136 ]
 "589
@@ -602,54 +570,54 @@ LCD_SHIFT_RIGHT 1
 [v _ctoa ctoa `(i  1 s 2 ctoa ]
 {
 "261
-[v ctoa@w w `i  1 a 2 63 ]
-[s S1052 _IO_FILE 0 ]
+[v ctoa@w w `i  1 a 2 60 ]
+[s S951 _IO_FILE 0 ]
 "259
-[v ctoa@fp fp `*.39S1052  1 p 2 60 ]
-[v ctoa@c c `uc  1 p 1 62 ]
+[v ctoa@fp fp `*.39S951  1 p 2 57 ]
+[v ctoa@c c `uc  1 p 1 59 ]
 "270
 } 0
 "72
 [v _pad pad `(i  1 s 2 pad ]
 {
 "74
-[v pad@w w `i  1 a 2 58 ]
-[v pad@i i `i  1 a 2 56 ]
-[s S1052 _IO_FILE 0 ]
+[v pad@w w `i  1 a 2 55 ]
+[v pad@i i `i  1 a 2 53 ]
+[s S951 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.39S1052  1 p 2 49 ]
-[v pad@buf buf `*.39uc  1 p 2 51 ]
-[v pad@p p `i  1 p 2 53 ]
+[v pad@fp fp `*.39S951  1 p 2 46 ]
+[v pad@buf buf `*.39uc  1 p 2 48 ]
+[v pad@p p `i  1 p 2 50 ]
 "95
 } 0
 "12 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 {
 "14
-[v strlen@a a `*.39Cuc  1 a 2 31 ]
+[v strlen@a a `*.39Cuc  1 a 2 28 ]
 "12
-[v strlen@s s `*.39Cuc  1 p 2 29 ]
+[v strlen@s s `*.39Cuc  1 p 2 26 ]
 "26
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputs.c
 [v _fputs fputs `(i  1 e 2 0 ]
 {
 "11
-[v fputs@i i `i  1 a 2 47 ]
+[v fputs@i i `i  1 a 2 44 ]
 "10
-[v fputs@c c `uc  1 a 1 46 ]
+[v fputs@c c `uc  1 a 1 43 ]
 "8
-[v fputs@s s `*.39Cuc  1 p 2 42 ]
-[s S1601 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.39S1601  1 p 2 44 ]
+[v fputs@s s `*.39Cuc  1 p 2 39 ]
+[s S1500 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.39S1500  1 p 2 41 ]
 "19
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
-[v fputc@c c `i  1 p 2 33 ]
-[s S1601 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.39S1601  1 p 2 35 ]
+[v fputc@c c `i  1 p 2 30 ]
+[s S1500 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.39S1500  1 p 2 32 ]
 "21
 } 0
 "100 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\lcd.c
@@ -657,58 +625,133 @@ LCD_SHIFT_RIGHT 1
 {
 [v putch@data data `uc  1 a 1 wreg ]
 [v putch@data data `uc  1 a 1 wreg ]
-[v putch@data data `uc  1 a 1 32 ]
+[v putch@data data `uc  1 a 1 29 ]
 "103
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\atoi.c
 [v _atoi atoi `(i  1 e 2 0 ]
 {
 "6
-[v atoi@n n `i  1 a 2 49 ]
-[v atoi@neg neg `i  1 a 2 42 ]
+[v atoi@n n `i  1 a 2 46 ]
+[v atoi@neg neg `i  1 a 2 39 ]
 "4
-[v atoi@s s `*.25Cuc  1 p 2 36 ]
+[v atoi@s s `*.25Cuc  1 p 2 33 ]
 "16
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\isspace.c
 [v _isspace isspace `(i  1 e 2 0 ]
 {
-[v isspace@c c `i  1 p 2 29 ]
+[v isspace@c c `i  1 p 2 26 ]
 "8
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\isdigit.c
 [v _isdigit isdigit `(i  1 e 2 0 ]
 {
-[v isdigit@c c `i  1 p 2 29 ]
+[v isdigit@c c `i  1 p 2 26 ]
 "8
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
-[v ___wmul@product product `ui  1 a 2 33 ]
+[v ___wmul@product product `ui  1 a 2 30 ]
 "15
-[v ___wmul@multiplier multiplier `ui  1 p 2 29 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 31 ]
+[v ___wmul@multiplier multiplier `ui  1 p 2 26 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 28 ]
 "53
 } 0
-"389 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\main.c
+"369 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\main.c
 [v _portSetup portSetup `(v  1 e 1 0 ]
 {
-"445
+"425
 } 0
 "67 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\lcd.c
 [v _initLCD initLCD `(v  1 e 1 0 ]
 {
 "86
 } 0
+"245 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@b b `d  1 p 4 42 ]
+[v ___flsub@a a `d  1 p 4 46 ]
+"250
+} 0
+"10
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 41 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 40 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 39 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 38 ]
+"10
+[v ___fladd@b b `d  1 p 4 26 ]
+[v ___fladd@a a `d  1 p 4 30 ]
+"237
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S1333 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S1338 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1341 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1333 1 fAsBytes 4 0 `S1338 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1341  1 a 4 70 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 64 ]
+[s S1409 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S1412 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1409 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1412  1 a 2 74 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 69 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 68 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 63 ]
+"8
+[v ___flmul@b b `d  1 p 4 51 ]
+[v ___flmul@a a `d  1 p 4 55 ]
+"205
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 50 ]
+[v ___flge@ff2 ff2 `d  1 p 4 54 ]
+"19
+} 0
+"11 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 45 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 38 ]
+"20
+[v ___fldiv@new_exp new_exp `s  1 a 2 43 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 50 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 49 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 42 ]
+"11
+[v ___fldiv@b b `d  1 p 4 26 ]
+[v ___fldiv@a a `d  1 p 4 30 ]
+"185
+} 0
 "65 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\uart.c
 [v _UART_send_string UART_send_string `(v  1 e 1 0 ]
 {
 "67
-[v UART_send_string@i i `i  1 a 2 34 ]
+[v UART_send_string@i i `i  1 a 2 31 ]
 "65
-[v UART_send_string@message message `*.35uc  1 p 2 30 ]
+[v UART_send_string@message message `*.35uc  1 p 2 27 ]
 "83
 } 0
 "58
@@ -716,14 +759,14 @@ LCD_SHIFT_RIGHT 1
 {
 [v UART_send_char@c c `Cuc  1 a 1 wreg ]
 [v UART_send_char@c c `Cuc  1 a 1 wreg ]
-[v UART_send_char@c c `Cuc  1 a 1 29 ]
+[v UART_send_char@c c `Cuc  1 a 1 26 ]
 "63
 } 0
 "89
 [v _UART_read UART_read `(uc  1 e 1 0 ]
 {
 "93
-[v UART_read@c c `uc  1 a 1 29 ]
+[v UART_read@c c `uc  1 a 1 26 ]
 "97
 } 0
 "85
@@ -735,20 +778,20 @@ LCD_SHIFT_RIGHT 1
 [v _UART_Init UART_Init `(v  1 e 1 0 ]
 {
 "20
-[v UART_Init@baudRate baudRate `l  1 a 4 47 ]
+[v UART_Init@baudRate baudRate `l  1 a 4 44 ]
 "51
 } 0
 "7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aldiv.c
 [v ___aldiv __aldiv `(l  1 e 4 0 ]
 {
 "10
-[v ___aldiv@quotient quotient `l  1 a 4 39 ]
+[v ___aldiv@quotient quotient `l  1 a 4 36 ]
 "11
-[v ___aldiv@sign sign `uc  1 a 1 38 ]
-[v ___aldiv@counter counter `uc  1 a 1 37 ]
+[v ___aldiv@sign sign `uc  1 a 1 35 ]
+[v ___aldiv@counter counter `uc  1 a 1 34 ]
 "7
-[v ___aldiv@dividend dividend `l  1 p 4 29 ]
-[v ___aldiv@divisor divisor `l  1 p 4 33 ]
+[v ___aldiv@dividend dividend `l  1 p 4 26 ]
+[v ___aldiv@divisor divisor `l  1 p 4 30 ]
 "41
 } 0
 "31 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\rtc.c
@@ -759,7 +802,7 @@ LCD_SHIFT_RIGHT 1
 "66 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\I2C.c
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
 {
-[v I2C_Master_Write@byteToWrite byteToWrite `ui  1 p 2 30 ]
+[v I2C_Master_Write@byteToWrite byteToWrite `ui  1 p 2 27 ]
 "71
 } 0
 "61
@@ -781,16 +824,16 @@ LCD_SHIFT_RIGHT 1
 [v _LCD_write_str LCD_write_str `(v  1 e 1 0 ]
 {
 "124
-[v LCD_write_str@i i `i  1 a 2 35 ]
+[v LCD_write_str@i i `i  1 a 2 32 ]
 "123
-[v LCD_write_str@str str `*.39uc  1 p 2 32 ]
+[v LCD_write_str@str str `*.39uc  1 p 2 29 ]
 "131
 } 0
 "106
 [v _LCD_set_cursor LCD_set_cursor `(v  1 e 1 0 ]
 {
-[v LCD_set_cursor@row row `ui  1 p 2 33 ]
-[v LCD_set_cursor@column column `ui  1 p 2 35 ]
+[v LCD_set_cursor@row row `ui  1 p 2 30 ]
+[v LCD_set_cursor@column column `ui  1 p 2 32 ]
 "121
 } 0
 "62
@@ -798,7 +841,7 @@ LCD_SHIFT_RIGHT 1
 {
 [v lcdInst@data data `uc  1 a 1 wreg ]
 [v lcdInst@data data `uc  1 a 1 wreg ]
-[v lcdInst@data data `uc  1 a 1 32 ]
+[v lcdInst@data data `uc  1 a 1 29 ]
 "65
 } 0
 "53
@@ -807,7 +850,7 @@ LCD_SHIFT_RIGHT 1
 [v send_byte@data data `uc  1 a 1 wreg ]
 [v send_byte@data data `uc  1 a 1 wreg ]
 "55
-[v send_byte@data data `uc  1 a 1 31 ]
+[v send_byte@data data `uc  1 a 1 28 ]
 "59
 } 0
 "42
@@ -816,109 +859,109 @@ LCD_SHIFT_RIGHT 1
 [v send_nibble@data data `uc  1 a 1 wreg ]
 [v send_nibble@data data `uc  1 a 1 wreg ]
 "44
-[v send_nibble@data data `uc  1 a 1 30 ]
+[v send_nibble@data data `uc  1 a 1 27 ]
 "47
 } 0
 "26
 [v _pulse_e pulse_e `T(v  1 s 1 pulse_e ]
 {
 "27
-[v pulse_e@interruptState interruptState `uc  1 a 1 29 ]
+[v pulse_e@interruptState interruptState `uc  1 a 1 26 ]
 "36
 } 0
 "28 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\I2C.c
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
 {
-[v I2C_Master_Init@clockFreq clockFreq `Cul  1 p 4 42 ]
+[v I2C_Master_Init@clockFreq clockFreq `Cul  1 p 4 39 ]
 "49
 } 0
 "7 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 {
 "10
-[v ___lldiv@quotient quotient `ul  1 a 4 37 ]
+[v ___lldiv@quotient quotient `ul  1 a 4 34 ]
 "11
-[v ___lldiv@counter counter `uc  1 a 1 41 ]
+[v ___lldiv@counter counter `uc  1 a 1 38 ]
 "7
-[v ___lldiv@dividend dividend `ul  1 p 4 29 ]
-[v ___lldiv@divisor divisor `ul  1 p 4 33 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 26 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 30 ]
 "30
 } 0
-"50 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\motors.c
+"8 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\motors.c
+[v _DCMotorRightOFF DCMotorRightOFF `(v  1 e 1 0 ]
+{
+"11
+} 0
+"59
 [v _DCMotorLeftRightFwdON DCMotorLeftRightFwdON `(v  1 e 1 0 ]
 {
-"53
+"62
 } 0
-"20
+"29
 [v _DCMotorRightFwd DCMotorRightFwd `(v  1 e 1 0 ]
 {
-"25
+"34
 } 0
-"14
+"23
 [v _DCMotorLeftFwd DCMotorLeftFwd `(v  1 e 1 0 ]
 {
-"19
+"28
 } 0
-"54
+"63
 [v _DCMotorLeftRightBkwdON DCMotorLeftRightBkwdON `(v  1 e 1 0 ]
 {
-"57
+"66
 } 0
-"32
+"41
 [v _DCMotorRightBkwd DCMotorRightBkwd `(v  1 e 1 0 ]
 {
-"37
+"46
 } 0
-"26
+"35
 [v _DCMotorLeftBkwd DCMotorLeftBkwd `(v  1 e 1 0 ]
 {
-"31
-} 0
-"9
-[v _DCMotorCenterRight DCMotorCenterRight `(v  1 e 1 0 ]
-{
-"12
+"40
 } 0
 "4
-[v _DCMotorCenterLeft DCMotorCenterLeft `(v  1 e 1 0 ]
+[v _DCMotorLeftOFF DCMotorLeftOFF `(v  1 e 1 0 ]
 {
 "7
 } 0
-"38
+"18
+[v _DCMotorCenterRight DCMotorCenterRight `(v  1 e 1 0 ]
+{
+"21
+} 0
+"13
+[v _DCMotorCenterLeft DCMotorCenterLeft `(v  1 e 1 0 ]
+{
+"16
+} 0
+"47
 [v _DCMotorAllOff DCMotorAllOff `(v  1 e 1 0 ]
 {
-"47
+"56
 } 0
-"365 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\main.c
-[v _low_isr low_isr `IIL(v  1 e 1 0 ]
-{
-"385
-} 0
-"334
+"298 C:\Users\AB\Documents\Google Drive\Skule\Year 2\W - AER201\code\AliceRobot\AliceRobot2.0.X\main.c
 [v _high_isr high_isr `IIH(v  1 e 1 0 ]
 {
-"363
+"342
 } 0
 "245 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
-[v ___flsub __flsub `(d  1 e 4 0 ]
+[v i2___flsub __flsub `(d  1 e 4 0 ]
 {
-[v ___flsub@b b `d  1 p 4 16 ]
-[v ___flsub@a a `d  1 p 4 20 ]
+[v i2___flsub@b b `d  1 p 4 16 ]
+[v i2___flsub@a a `d  1 p 4 20 ]
 "250
 } 0
 "10
-[v ___fladd __fladd `(d  1 e 4 0 ]
+[v i2___fladd __fladd `(d  1 e 4 0 ]
 {
-"17
-[v ___fladd@grs grs `uc  1 a 1 15 ]
-"15
-[v ___fladd@bexp bexp `uc  1 a 1 14 ]
-"16
-[v ___fladd@aexp aexp `uc  1 a 1 13 ]
-"13
-[v ___fladd@signs signs `uc  1 a 1 12 ]
-"10
-[v ___fladd@b b `d  1 p 4 0 ]
-[v ___fladd@a a `d  1 p 4 4 ]
+[v i2___fladd@grs __fladd `uc  1 a 1 15 ]
+[v i2___fladd@bexp __fladd `uc  1 a 1 14 ]
+[v i2___fladd@aexp __fladd `uc  1 a 1 13 ]
+[v i2___fladd@signs __fladd `uc  1 a 1 12 ]
+[v i2___fladd@b b `d  1 p 4 0 ]
+[v i2___fladd@a a `d  1 p 4 4 ]
 "237
 } 0

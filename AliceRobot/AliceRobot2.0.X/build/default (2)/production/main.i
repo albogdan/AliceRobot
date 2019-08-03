@@ -7,7 +7,6 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 110 "main.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4380,7 +4379,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 110 "main.c" 2
+# 1 "main.c" 2
 
 # 1 "./configBits.h" 1
 # 12 "./configBits.h"
@@ -4437,7 +4436,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 #pragma config EBTRB = OFF
-# 111 "main.c" 2
+# 2 "main.c" 2
 
 # 1 "./lcd.h" 1
 # 13 "./lcd.h"
@@ -4635,7 +4634,7 @@ void LCD_set_cursor(unsigned int row, unsigned int column);
 void LCD_write_str(unsigned char *str);
 
 void LCD_write_char(unsigned char str);
-# 112 "main.c" 2
+# 3 "main.c" 2
 
 # 1 "./I2C.h" 1
 # 34 "./I2C.h"
@@ -4663,7 +4662,7 @@ void I2C_Master_Stop(void);
 void I2C_Master_Write(unsigned byteToWrite);
 # 64 "./I2C.h"
 unsigned char I2C_Master_Read(unsigned char ackBit);
-# 113 "main.c" 2
+# 4 "main.c" 2
 
 # 1 "./stdutils.h" 1
 # 68 "./stdutils.h"
@@ -4698,7 +4697,7 @@ typedef enum
  E_DECIMAL = 10,
  E_HEX = 16
 }NumericSystem_et;
-# 114 "main.c" 2
+# 5 "main.c" 2
 
 
 
@@ -4718,7 +4717,7 @@ typedef struct
 void RTC_Init(void);
 void RTC_SetDateTime(rtc_t *rtc);
 void RTC_GetDateTime(rtc_t *rtc);
-# 117 "main.c" 2
+# 8 "main.c" 2
 
 # 1 "./uart.h" 1
 # 15 "./uart.h"
@@ -4742,10 +4741,13 @@ volatile unsigned char _rx_buffer_head;
 volatile unsigned char _rx_buffer_tail;
 volatile unsigned char _tx_buffer_head;
 volatile unsigned char _tx_buffer_tail;
-# 118 "main.c" 2
+# 9 "main.c" 2
 
 # 1 "./motors.h" 1
-# 25 "./motors.h"
+# 35 "./motors.h"
+void DCMotorLeftOFF();
+void DCMotorRightOFF();
+
 void DCMotorCenterRight();
 void DCMotorCenterLeft();
 
@@ -4759,7 +4761,7 @@ void DCMotorAllOff();
 
 void DCMotorLeftRightFwdON();
 void DCMotorLeftRightBkwdON();
-# 119 "main.c" 2
+# 10 "main.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\string.h" 3
@@ -4816,34 +4818,26 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 120 "main.c" 2
-
-
-
-
-
-
-
-
+# 11 "main.c" 2
+# 23 "main.c"
 void portSetup(void);
- void reverse(char s[]);
- void itoa(int n, char s[]);
+void reverse(char s[]);
+void itoa(int n, char s[]);
+double absolute(double value);
 
 volatile _Bool key_was_pressed = 0;
 const char keys[] = "123A456B789C*0#D";
 
 
+volatile double tickL = 0.0;
+volatile double tickR = 0.0;
+
 volatile double distanceL = 0.0;
 volatile double distanceR = 0.0;
 
-
-
-
-
-
-volatile _Bool direction = 1;
-
-
+volatile int travelDirection = 0;
+int sideTurnedOff = 0;
+# 49 "main.c"
 void main(void){
 
     portSetup();
@@ -4868,8 +4862,57 @@ void main(void){
     char buffer[10];
     int index = 0;
     unsigned char toPrint;
+    _Bool correctingDirection = 0;
+    _Bool moving = 0;
     while(1){
-# 183 "main.c"
+        distanceL = (tickL/960)*200;
+        distanceR = (tickR/960)*200;
+        if(moving && travelDirection == 1){
+            if(distanceR - distanceL > 8.0){
+                DCMotorRightOFF();
+                sideTurnedOff = 2;
+                correctingDirection = 1;
+            }
+            if(distanceL - distanceR > 8.0){
+                DCMotorLeftOFF();
+                sideTurnedOff = 1;
+                correctingDirection = 1;
+            }
+            if(correctingDirection && sideTurnedOff == 1 && (distanceL - distanceR < 5.0)){
+                DCMotorLeftRightFwdON();
+                sideTurnedOff = 0;
+                correctingDirection = 0;
+            }
+            if(correctingDirection && sideTurnedOff == 2 && (distanceR - distanceL < 5.0)){
+                DCMotorLeftRightFwdON();
+                sideTurnedOff = 0;
+                correctingDirection = 0;
+            }
+        }
+        if(moving && travelDirection == 2){
+            if(distanceR - distanceL > 8.0){
+                DCMotorLeftOFF();
+                sideTurnedOff = 1;
+                correctingDirection = 1;
+            }
+            if(distanceL - distanceR> 8.0){
+                DCMotorRightOFF();
+                sideTurnedOff = 2;
+                correctingDirection = 1;
+            }
+            if(correctingDirection && sideTurnedOff == 1 && (distanceL - distanceR < 5.0)){
+                DCMotorLeftRightBkwdON();
+                sideTurnedOff = 0;
+                correctingDirection = 0;
+            }
+            if(correctingDirection && sideTurnedOff == 2 && (distanceR - distanceL < 5.0)){
+                DCMotorLeftRightBkwdON();
+                sideTurnedOff = 0;
+                correctingDirection = 0;
+            }
+
+        }
+# 140 "main.c"
         if(UART_available()){
             command[index] = UART_read();
             index++;
@@ -4892,6 +4935,8 @@ void main(void){
                                 case 'B':
                                     LCD_set_cursor(0,0);
 
+                                    travelDirection = 1;
+                                    moving = 1;
                                     DCMotorLeftRightFwdON();
                                     break;
                                 case 'L':
@@ -4907,6 +4952,7 @@ void main(void){
                                 case 'F':
                                     LCD_set_cursor(0,0);
 
+                                    moving = 0;
                                     DCMotorAllOff();
                                     break;
                                 default:
@@ -4918,6 +4964,8 @@ void main(void){
                                 case 'B':
                                     LCD_set_cursor(0,0);
 
+                                    travelDirection = 2;
+                                    moving = 1;
                                     DCMotorLeftRightBkwdON();
                                     break;
                                 case 'L':
@@ -4933,6 +4981,7 @@ void main(void){
                                 case 'F':
                                     LCD_set_cursor(0,0);
 
+                                    moving = 0;
                                     DCMotorAllOff();
                                     break;
                                 default:
@@ -5006,24 +5055,24 @@ void main(void){
     }
 
 }
-# 334 "main.c"
+# 298 "main.c"
 void __attribute__((picinterrupt(("high_priority")))) high_isr(void){
-
+    (INTCONbits.GIE = 0);
 
     if (INT0IE && INT0IF){
         if(PORTDbits.RD0){
-            distanceL++;
+            tickL++;
         }else{
-            distanceL--;
+            tickL--;
         }
         INT0IF = 0;
     }
 
     if (INT2IE && INT2IF){
         if(PORTDbits.RD1){
-            distanceR++;
+            tickR++;
         }else{
-            distanceR--;
+            tickR--;
         }
         INT2IF = 0;
     }
@@ -5034,13 +5083,6 @@ void __attribute__((picinterrupt(("high_priority")))) high_isr(void){
         key_was_pressed = 1;
         INT1IF = 0;
     }
-
-
-}
-
-void __attribute__((picinterrupt(("low_priority")))) low_isr(void){
-    (INTCONbits.GIE = 0);
-
      if(RCIE && RCIF){
         _rx_buffer[_rx_buffer_head] = RCREG;
         _rx_buffer_head = (unsigned char)(_rx_buffer_head + 1) % 64;
@@ -5059,9 +5101,7 @@ void __attribute__((picinterrupt(("low_priority")))) low_isr(void){
 
     (INTCONbits.GIE = 1);
 }
-
-
-
+# 369 "main.c"
 void portSetup(){
 
 
@@ -5114,7 +5154,7 @@ void portSetup(){
 
     (INTCONbits.GIE = 1);
 
-    RCONbits.IPEN = 1;
+
 
     INTCONbits.PEIE_GIEL = 1;
 
@@ -5149,3 +5189,12 @@ void portSetup(){
          s[j] = c;
      }
 }
+
+
+ double absolute(double value){
+     if(value< 0.0){
+         return -1.0 * value;
+     }else{
+         return value;
+     }
+ }

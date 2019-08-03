@@ -1,112 +1,3 @@
-///**
-// * @file
-// * @author Tyler Gamvrelis
-// * 
-// * Created on October 1, 2017, 2:28 PM
-// * 
-// * @defgroup BoardTest
-// * @brief Tests the basic capabilities of most of the development board modules
-// */
-//
-//#include <xc.h>
-//#include "configBits.h"
-//#include "I2C.h"
-//#include "lcd.h"
-//
-//void sendUART(char *message);
-//
-//void main(void){
-//    // Configure pins, SFRs, and on-board modules
-//    // <editor-fold defaultstate="collapsed" desc="Machine Configuration">    
-//    /********************************* PIN I/O ********************************/
-//    /* Write outputs to LATx, read inputs from PORTx. Here, all latches (LATx)
-//     * are being cleared (set low) to ensure a controlled start-up state. */  
-//    LATA = 0x00;
-//    LATB = 0x00; 
-//    LATC = 0x00;
-//    LATD = 0x00;
-//    LATE = 0x00;
-//
-//    /* After the states of LATx are known, the data direction registers, TRISx
-//     * are configured. 0 --> output; 1 --> input. Default is  1. */
-//    TRISA = 0b11111111; // All inputs
-//    TRISB = 0b11110010; // RB1, RB4, RB5, RB6, RB7 as inputs (for keypad)
-//    TRISC = 0b10000000; /* RC3 is SCK/SCL (SPI/I2C),
-//                         * RC4 is SDI/SDA (SPI/I2C),
-//                         * RC5 is SDO (SPI),
-//                         * RC6 and RC7 are UART TX and RX, respectively. */
-//    TRISD = 0b00000001; /* RD0 is the GLCD chip select (tri-stated so that it's
-//                         * pulled up by default),
-//                         * RD1 is the GLCD register select,
-//                         * RD2 is the character LCD RS,
-//                         * RD3 is the character LCD enable (E),
-//                         * RD4-RD7 are character LCD data lines. */
-//    TRISE = 0b00000100; /* RE2 is the SD card chip select (tri-stated so that
-//                         * it's pulled up by default).
-//                         * Note that the upper 4 bits of TRISE are special 
-//                         * control registers. Do not write to them unless you 
-//                         * read §9.6 in the datasheet */
-//
-//    /************************** A/D Converter Module **************************/
-//    ADCON0 = 0x00;       // Disable ADC
-//    ADCON1 = 0x0F;       // Set all A/D ports to digital (pg. 222)
-//    ADCON2bits.ADFM = 1; // Right justify A/D result
-//
-//    CVRCON = 0x00;       // Disable comparator voltage reference (pg. 239)
-//    CMCONbits.CIS = 0;   // Connect C1 Vin and C2 Vin to RA0 and RA1 (pg. 233)
-//    ADCON2 = 0b10110001; // Right justify A/D result, 16TAD, FOSC/8 clock
-//    
-//    /****************************** USART Module ******************************/
-//    long baudRate = 9600;
-//    SPBRG = (unsigned char)((_XTAL_FREQ / (64 * baudRate)) - 1);
-//    TXSTAbits.TX9 = 0;  // Use 8-bit transmission (8 data bits, no parity bit)
-//    TXSTAbits.SYNC = 0; // Asynchronous communication
-//    TXSTAbits.TXEN = 1; // Enable transmitter
-//    TRISCbits.TRISC6 = 0;         // TX = output
-//    RCSTAbits.SPEN = 1; // Enable serial peripheral
-//    //</editor-fold>
-//    
-////    testUART();
-//    sendUART("Hello World!\n");
-//}
-//
-//
-///**
-// * @brief Sends "Hello world!" via the UART bus, which can be received by a PC
-// *        connected to the USB port in the USB module
-// */
-//void testUART(void){
-//    const char msg[] = "Hello world!"; // Create a new array of characters
-//    
-//    // Transmit
-//    for(unsigned char i = 0; i < sizeof(msg); i++){
-//        while(!TXIF | !TRMT){
-//            continue;
-//        }
-//        
-//        TXREG =  msg[i];
-//    }
-//}
-//
-//
-//void sendUART(char *message){
-//    // Transmit
-//    int i;
-//    for(i = 0; message[i]!='\0'; i++){      
-//        while(!TXIF | !TRMT){
-//            continue;
-//        }
-//        TXREG =  message[i];
-//    }
-//}
-//
-//
-
-
-
-
-
-
 #include <xc.h>
 #include "configBits.h"
 #include "lcd.h"
@@ -125,23 +16,34 @@
 #define M_PI 3.14159265358979323846
 #define GEAR_RATIO 960//960 b/c 8 pulses per encoder rotation * 120 gearing ratio//120
 #define CIRCUMFERENCE 200//63*M_PI
+#define ACTIVATION_TOLERANCE 8.0
+#define SHUTDOWN_TOLERANCE 5.0
+
+
 void portSetup(void);
- void reverse(char s[]);
- void itoa(int n, char s[]);
+void reverse(char s[]);
+void itoa(int n, char s[]);
+double absolute(double value);
 /* Define constants and global variables */
 volatile bool key_was_pressed = false; //interrupt for key on keypad being pressed
 const char keys[] = "123A456B789C*0#D"; //Possible keys on the keypad mapped to their number
 
 
-volatile double distanceL = 0.0; //distance travelled by robot given by encoders on RB2 (left motor)
-volatile double distanceR = 0.0; //distance travelled by robot given by encoders on RB0 (right motor)
+volatile double tickL = 0.0; //distance travelled by robot given by encoders on RB2 (left motor)
+volatile double tickR = 0.0; //distance travelled by robot given by encoders on RB0 (right motor)
+
+volatile double distanceL = 0.0;
+volatile double distanceR = 0.0;
+
+volatile int travelDirection = DIRECTION_STATIONARY;
+int sideTurnedOff = STOPPED_NONE;
 
 //(DISTANCE/GEAR_RATIO)*CIRCUMFERENCE
 // GEAR_RATIO = 120;
 // CIRCUMFERENCE = 63*pi = 197.92
 
 
-volatile bool direction = true; //direction of travel --> True = Fwd; False = Bkwd
+//volatile bool direction = true; //direction of travel --> True = Fwd; False = Bkwd
 //rtc_t rtc;
 
 void main(void){
@@ -168,17 +70,72 @@ void main(void){
     char buffer[10];
     int index = 0;
     unsigned char toPrint;
+    bool correctingDirection = false;
+    bool moving = false;
     while(1){
-//        snprintf(buffer, 5, "%000.00f", (distanceL/GEAR_RATIO)*CIRCUMFERENCE);
- //       distanceL = (distanceL/GEAR_RATIO)*CIRCUMFERENCE;
+        distanceL = (tickL/GEAR_RATIO)*CIRCUMFERENCE;
+        distanceR = (tickR/GEAR_RATIO)*CIRCUMFERENCE;
+        if(moving && travelDirection == DIRECTION_FORWARD){
+            if(distanceR - distanceL > ACTIVATION_TOLERANCE){
+                DCMotorRightOFF();
+                sideTurnedOff = STOPPED_RIGHT;
+                correctingDirection = true;
+            }
+            if(distanceL - distanceR > ACTIVATION_TOLERANCE){
+                DCMotorLeftOFF();
+                sideTurnedOff = STOPPED_LEFT;
+                correctingDirection = true;
+            }
+            if(correctingDirection && sideTurnedOff == STOPPED_LEFT && (distanceL - distanceR < SHUTDOWN_TOLERANCE)){
+                DCMotorLeftRightFwdON();
+                sideTurnedOff = STOPPED_NONE;
+                correctingDirection = false;
+            }
+            if(correctingDirection && sideTurnedOff == STOPPED_RIGHT && (distanceR - distanceL < SHUTDOWN_TOLERANCE)){
+                DCMotorLeftRightFwdON();
+                sideTurnedOff = STOPPED_NONE;
+                correctingDirection = false;
+            }
+        }
+        if(moving && travelDirection == DIRECTION_BACKWARD){
+            if(distanceR - distanceL > ACTIVATION_TOLERANCE){
+                DCMotorLeftOFF();
+                sideTurnedOff = STOPPED_LEFT;
+                correctingDirection = true;
+            }
+            if(distanceL - distanceR> ACTIVATION_TOLERANCE){
+                DCMotorRightOFF();
+                sideTurnedOff = STOPPED_RIGHT;
+                correctingDirection = true;
+            }
+            if(correctingDirection && sideTurnedOff == STOPPED_LEFT && (distanceL - distanceR < SHUTDOWN_TOLERANCE)){
+                DCMotorLeftRightBkwdON();
+                sideTurnedOff = STOPPED_NONE;
+                correctingDirection = false;
+            }
+            if(correctingDirection && sideTurnedOff == STOPPED_RIGHT && (distanceR - distanceL < SHUTDOWN_TOLERANCE)){
+                DCMotorLeftRightBkwdON();
+                sideTurnedOff = STOPPED_NONE;
+                correctingDirection = false;
+            }
+            
+        }
+        
+        
+        
+        
+ //       snprintf(buffer, 5, "%000.00f", (distanceL/GEAR_RATIO)*CIRCUMFERENCE);
+//        distanceL = (tickL/GEAR_RATIO)*CIRCUMFERENCE;
 //        itoa(distanceL,buffer);   // 10 means decimal
- //       printf("Binary value = %s\n", buffer);
- //       toPrint = distanceL + '0';
+//        printf("Binary value = %s\n", buffer);
+//        toPrint = distanceL + '0';
+
+
 //        LCD_set_cursor(0,9);
-//        printf("%4.f", (distanceL/GEAR_RATIO)*CIRCUMFERENCE);
+//        printf("L%4.f", (tickL/GEAR_RATIO)*CIRCUMFERENCE);
 //        LCD_set_cursor(1,9);
-//        printf("%4.f", (distanceR/GEAR_RATIO)*CIRCUMFERENCE);
-        //        LCD_write_str(buffer);
+//        printf("R%4.f", (tickR/GEAR_RATIO)*CIRCUMFERENCE);
+  
         
         if(UART_available()){
             command[index] = UART_read();
@@ -202,6 +159,8 @@ void main(void){
                                 case 'B': //Both (Left and Right)
                                     LCD_set_cursor(0,0);
                                     //LCD_write_str("Move L+R Fwd   ");
+                                    travelDirection = DIRECTION_FORWARD;
+                                    moving = true;
                                     DCMotorLeftRightFwdON();
                                     break;
                                 case 'L': // Left only
@@ -217,6 +176,7 @@ void main(void){
                                 case 'F': //oFF
                                     LCD_set_cursor(0,0);
                                     //LCD_write_str("Stop Fwd move   ");
+                                    moving = false;
                                     DCMotorAllOff();
                                     break;
                                 default:
@@ -228,6 +188,8 @@ void main(void){
                                 case 'B': //Both (Left and Right)
                                     LCD_set_cursor(0,0);
                                     //LCD_write_str("Move L+R Bkwd  ");
+                                    travelDirection = DIRECTION_BACKWARD;
+                                    moving = true;
                                     DCMotorLeftRightBkwdON();
                                     break;
                                 case 'L': // Left only
@@ -243,6 +205,7 @@ void main(void){
                                 case 'F': //oFF
                                     LCD_set_cursor(0,0);
                                     //LCD_write_str("Stop Bkwd move  ");
+                                    moving = false;
                                     DCMotorAllOff();
                                     break;
                                 default:
@@ -331,23 +294,24 @@ void main(void){
 
 
 
+
 void __interrupt(high_priority) high_isr(void){
-//    di();
+    di();
     // Interrupt on change handler for RB0
     if (INT0IE && INT0IF){
         if(PORTDbits.RD0){
-            distanceL++;
+            tickL++;
         }else{
-            distanceL--;
+            tickL--;
         }
         INT0IF = 0; //Clears interrupt flag
     }
     // Interrupt on change handler for RB2
     if (INT2IE && INT2IF){
         if(PORTDbits.RD1){
-            distanceR++;
+            tickR++;
         }else{
-            distanceR--;
+            tickR--;
         }
         INT2IF = 0; //Clears interrupt flag
     }
@@ -358,13 +322,6 @@ void __interrupt(high_priority) high_isr(void){
         key_was_pressed = true;
         INT1IF = 0; // Clear interrupt flag bit to signify it's been handled
     }
-
-//    ei();
-}
-
-void __interrupt(low_priority) low_isr(void){
-    di();
-    // Interrupt on change handler for RB1
      if(RCIE && RCIF){     
         _rx_buffer[_rx_buffer_head] = RCREG;
         _rx_buffer_head = (unsigned char)(_rx_buffer_head + 1) % SERIAL_RX_BUFFER_SIZE;
@@ -383,6 +340,29 @@ void __interrupt(low_priority) low_isr(void){
 
     ei();
 }
+//
+//void __interrupt(low_priority) low_isr(void){
+//    di();
+//    // Interrupt on change handler for RB1
+//     if(RCIE && RCIF){     
+//        _rx_buffer[_rx_buffer_head] = RCREG;
+//        _rx_buffer_head = (unsigned char)(_rx_buffer_head + 1) % SERIAL_RX_BUFFER_SIZE;
+//        RCIF = 0; // Clear interrupt flag bit to signify it's been handled
+//    }
+//    if(TXIE && TXIF){
+//        if((_tx_buffer_tail != _tx_buffer_head)){
+//            TXREG = _tx_buffer[_tx_buffer_tail];
+//            _tx_buffer_tail = (unsigned char)(_tx_buffer_tail + 1) % SERIAL_TX_BUFFER_SIZE;
+//            TXIF = 0; //Clear interrupt flag bit to signify it's been handled
+//        }else{
+//            TXIF = 0;//*******************************************************************************************************************
+//            TXIE = 0;
+//        }
+//    }
+//
+//    ei();
+//}
+
 
 
 
@@ -438,7 +418,7 @@ void portSetup(){
     /* Enable General Interrupts*/
     ei();
     /* Enable Priority Interrupts*/
-    RCONbits.IPEN = 1;
+//    RCONbits.IPEN = 1;
     /* Enable peripheral interrupts*/
     INTCONbits.PEIE_GIEL = 1;
     
@@ -473,3 +453,12 @@ void portSetup(){
          s[j] = c;
      }
 }  
+ 
+ 
+ double absolute(double value){
+     if(value< 0.0){
+         return -1.0 * value;
+     }else{
+         return value;
+     }
+ }

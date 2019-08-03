@@ -45,8 +45,8 @@ void UART_Init(void){
     PIE1bits.RCIE = 1; //Enable Receive Interrupts
     PIE1bits.TXIE = 1; //Enable Transmit Interrupts
     
-    IPR1bits.TXIP = 0; //Set low transmit interrupt priority
-    IPR1bits.RCIP = 0; //Set low receive interrupt priority
+//    IPR1bits.TXIP = 0; //Set low transmit interrupt priority
+//    IPR1bits.RCIP = 0; //Set low receive interrupt priority
     
 }
 

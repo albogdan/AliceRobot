@@ -55,22 +55,22 @@ void setup() {
       delay(250);
 //      Serial.print('.');
     }
-    Serial.println(WiFi.localIP());           // Send the IP address of the ESP8266 to PC
+//    Serial.println(WiFi.localIP());           // Send the IP address of the ESP8266 to PC
     
     if (! rtc.begin()) {
-      Serial.println("Couldn't find RTC");
+//      Serial.println("Couldn't find RTC");
       while (1);
     }
     if (! rtc.isrunning()) {
-      Serial.println("RTC is NOT running!");
+//      Serial.println("RTC is NOT running!");
     }
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-    Serial.println("RTC Started");
+//    Serial.println("RTC Started");
 
 
     SPIFFS.begin(); //begin SPI Flash Files System
     delay(10);
-    Serial.println("SPIFFS started");
+//    Serial.println("SPIFFS started");
 
     server.on("/", HTTP_GET, handleRoot);     // Call the 'handleRoot' function when a client requests URI "/"
     server.on("/MOTORRIGHT", HTTP_POST, handleMotorRight);
@@ -102,7 +102,7 @@ void loop() {
             String text(temp);
             runningScreen.setLine(1, text);
             emptyScreen.fullSend();
-            Serial.println("CHANGING TO RUN MODE");
+//            Serial.println("CHANGING TO RUN MODE");
             currentScreen = runningScreen;
         }else if(inputString == "K2\n"){
             DeviceMode = MODE_LOGS;
